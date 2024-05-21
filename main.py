@@ -13,8 +13,10 @@ def check_root():
 def get_embedding(text):
     # model = SentenceTransformer(
     #     'sentence-transformers/paraphrase-multilingual-mpnet-base-v2')
+    # model = SentenceTransformer(
+    #     'sentence-transformers/paraphrase-MiniLM-L6-v2')
     model = SentenceTransformer(
-        'sentence-transformers/paraphrase-MiniLM-L6-v2')
+        'sentence-transformers/bert-base-nli-mean-tokens')
     text = text.replace("\n", " ")
     embeddings = model.encode(text).tolist()
     return embeddings
